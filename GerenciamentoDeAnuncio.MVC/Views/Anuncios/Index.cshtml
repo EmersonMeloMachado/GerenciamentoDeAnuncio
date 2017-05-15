@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "SINGLE PAGE APPLICATION";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section scripts{
+    <script src="~/Scripts/App/CrudApp.js"></script>
+}
+@section styles{
+    <style>
+        body {
+            margin: 50px;
+        }
+    </style>
+}
+<section id="conteudo" class="container">
+    <div class="form-group">
+        <section id="formulario">
+            <form action="/" method="post" id="formDados" name="formDados">
+                <input type="hidden" name="AnuncioID" id="AnuncioID" />
+                <div class="form-group">
+                    <label for="Texto">Texto</label>
+                    <input type="text" id="Texto" class="form-control" name="Texto" />
+                </div>
+                <div class="form-group">
+                    <label for="FileUploadVideo">Upload de Video</label>
+                    <input type="file" name="Video" id="Video"/>
+                </div>
+                <div class="form-group">
+                    <label for="FileUploadAudio">Upload de som</label>
+                    <input type="file" name="Audio" id="Audio" />
+                </div>
+                <div class="form-group">
+                    <input type="button" id="salvar" value="Salvar" class="btn btn-success" onclick="Cadastrar()" />
+                    <input type="button" id="atualizar" value="Atualizar" class="btn btn-info hidden" onclick="Atualizar()" />
+                </div>
+            </form>
+        </section>
+    </div>
+    <section id="listagem">
+        <table class="table" id="tabela">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Texto</th>
+                    <th>Video</th>
+                    <th>Audio</th>
+                    <th>Status</th>
+                    <th>Data de Cadastro</th>
+                    <th>Data de Alteração</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+        </table>
+    </section>
+</section>
+
+
+
